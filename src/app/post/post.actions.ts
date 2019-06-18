@@ -1,33 +1,33 @@
 import { Action } from '@ngrx/store';
-import { Post }  from './post.reducer';
+import { Post } from './post.reducer';
 
-export const QUERY    = '[Post] query posts';
+export const QUERY = '[Post] query posts';
 
-export const ADDED    = '[Post] added';
+export const ADDED = '[Post] added';
 export const MODIFIED = '[Post] modified';
-export const REMOVED  = '[Post] removed';
+export const REMOVED = '[Post] removed';
 
-export const UPDATE   = '[Post] update';
-export const SUCCESS  = '[Post] update success';
+export const UPDATE = '[Post] update';
+export const SUCCESS = '[Post] update success';
 
 export class Query implements Action {
     readonly type = QUERY;
-    constructor() {}
+    constructor() { }
 }
 
-export class Added  implements Action {
+export class Added implements Action {
     readonly type = ADDED;
     constructor(public payload: Post) { }
 }
 
 export class Modified implements Action {
     readonly type = MODIFIED;
-    constructor(public payload: Post) {}
+    constructor(public payload: Post) { }
 }
 
 export class Removed implements Action {
     readonly type = REMOVED;
-    constructor(public payload: Post) {}
+    constructor(public payload: Post) { }
 }
 
 
@@ -37,18 +37,18 @@ export class Update implements Action {
     constructor(
         public id: string,
         public changes: Partial<Post>,
-      ) { }
+    ) { }
 }
 
 export class Success implements Action {
     readonly type = SUCCESS;
-    constructor() {}
+    constructor() { }
 }
 
 export type PostActions
-= Query | 
-Added | 
-Modified | 
-Removed | 
-Update | 
-Success;
+    = Query |
+    Added |
+    Modified |
+    Removed |
+    Update |
+    Success;
